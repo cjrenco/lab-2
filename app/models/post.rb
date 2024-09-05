@@ -8,6 +8,8 @@ class AuthorEmailValidator < ActiveModel::EachValidator
 end
 
 class Post < ApplicationRecord
+  has_many :comments
+
   validates :published, presence: true
   validates :title, presence: true, length: {maximum: 100}
   validates :content, presence: true, length: {minimum: 140}

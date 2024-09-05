@@ -7,6 +7,8 @@ class CommentEmailValidator < ActiveModel::EachValidator
 end
 
 class Comment < ApplicationRecord
+  belongs_to :post
+
   validates :content, presence: true
   validates :author, presence: true, comment_email: true
 

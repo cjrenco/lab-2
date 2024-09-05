@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Posts</h1>
+
+    <% @posts.each do |post| %>
+    <div class="card" >
+      <div class="card-body">
+        <h5 class="card-title"><%=post.title %></h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">Written by: <%=post.author %></h6>
+        <p class="card-text"><%= post.content %></p>
+        <a href="#" class="card-link"><%= link_to "Click to see post", post_path(post) %></a>
+      </div>
+    </div>
+    <% end %>
+
+</div>
